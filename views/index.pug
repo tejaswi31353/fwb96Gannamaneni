@@ -3,4 +3,19 @@ extends layout
 block content
   h1= title
   p Welcome to #{title} and this is running
-  button(type="button" id="pressme",class="btn btn-secondary") Press Me
+  button(type="button", onclick='update()', id="pressme",class="btn btn-secondary") Press Me
+  br
+  br
+  br
+  div(id="target") Display
+  br
+  br
+  a(href='/Helicopter') Click Me, I will redirect you to Helicopter
+
+  script.
+     client_count = 0;
+     //console.log("hello");
+     function update()
+     {
+       document.getElementById("target").innerHTML = "Number of clicks is : " + ++client_count
+     }
